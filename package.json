@@ -44,6 +44,7 @@
   "dependencies": {
     "@types/react-instantsearch": "^6.10.1",
     "algoliasearch": "^4.17.0",
-    "react-instantsearch-hooks": "^6.44.0"
+    "react-instantsearch-hooks": "^6.44.0",
+    "react-native-render-html": "^6.3.4"
   }
 }

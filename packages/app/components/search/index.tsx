@@ -11,11 +11,8 @@ import {
   useRef,
   useState,
 } from "react"
-
-export enum SearchIndex {
-  EngSwa = "eng-swa",
-  SwaEng = "swa-eng",
-}
+import InfiniteHits, { Hit } from './infinite-hits'
+import { SearchIndex } from "app/types"
 
 interface SearchContextType {
   searchClient: SearchClient
@@ -78,6 +75,11 @@ export default function Search(): ReactElement {
       <View className="bg-dark-blue w-full flex-1">
         <InstantSearch searchClient={searchClient} indexName={searchIndex}>
           <SearchBox onChange={scrollToTop} />
+          <InfiniteHits
+            hitComponent={Hit}
+            searchIndex={searchIndex}
+            ref={listRef}
+          />
         </InstantSearch>
       </View>
     </SafeAreaView>

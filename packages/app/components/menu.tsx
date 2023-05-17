@@ -1,7 +1,7 @@
-import { type ReactElement } from "react";
-import { View } from "app/design/view";
-import { Text, TextLink } from "app/design/typography";
-import { Icon } from "app/design/icons";
+import { type ReactElement } from "react"
+import { View } from "app/design/view"
+import { Text, TextLink } from "app/design/typography"
+import { Icon } from "app/design/icons"
 
 export default function Menu(): ReactElement {
   return (
@@ -19,5 +19,5 @@ export default function Menu(): ReactElement {
         </View>
       </TextLink>
     </View>
-  );
+  )
 }
