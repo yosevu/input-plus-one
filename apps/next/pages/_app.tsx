@@ -8,6 +8,12 @@ import React from 'react'
 import '../global.css'
 import { AppProps } from 'next/app'
 
+// Prevents Unhandled Runtime Error
+// ReferenceError: _frameTimestamp is not defined
+if (typeof window !== 'undefined') {
+  window._frameTimestamp = null;
+}
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
