@@ -31,6 +31,7 @@ module.exports = {
   plugins: ['react', 'react-native', '@typescript-eslint'],
   rules: {
     'comma-dangle': ['error', 'always-multiline'],
+    'react/react-in-jsx-scope': 'off',
   },
   settings: {
     next: {
