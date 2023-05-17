@@ -8,6 +8,7 @@ module.exports = {
     'next',
     'plugin:react/recommended',
     'standard-with-typescript',
+    'prettier',
   ],
   overrides: [
     {

@@ -12,13 +12,14 @@
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-config-standard-with-typescript": "latest",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "latest",
     "eslint-plugin-react-native": "^4.0.0",
-    "prettier": "^2.7.1",
+    "prettier": "2.8.8",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "turbo": "^1.4.2",
     "typescript": "*"
@@ -27,7 +28,8 @@
     "native": "cd apps/expo && yarn start",
     "web": "cd apps/next && yarn next",
     "commit": "cz",
-    "lint": "yarn eslint --ext .js,.jsx,.ts,.tsx ."
+    "lint": "yarn eslint --ext .js,.jsx,.ts,.tsx .",
+    "format": "prettier --write \"packages/**/*.{ts,tsx} apps/**/*.{ts,tsx}\""
   },
   "engines": {
     "node": ">=16.0.0 <17.0.0"
