@@ -8,18 +8,26 @@
   "devDependencies": {
     "@types/react": "^18.0.17",
     "@types/react-native": "^0.69.5",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.21.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "latest",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "latest",
+    "eslint-plugin-react-native": "^4.0.0",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "turbo": "^1.4.2",
-    "typescript": "^4.7.4"
+    "typescript": "*"
   },
   "scripts": {
     "native": "cd apps/expo && yarn start",
     "web": "cd apps/next && yarn next",
-    "commit": "cz"
+    "commit": "cz",
+    "lint": "yarn eslint --ext .js,.jsx,.ts,.tsx ."
   },
   "engines": {
     "node": ">=16.0.0 <17.0.0"
