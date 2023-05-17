@@ -1,26 +1,27 @@
 import { NavigationContainer } from '@react-navigation/native'
 import * as Linking from 'expo-linking'
-import { useMemo } from 'react'
+import { type ReactElement, useMemo } from 'react'
 
 export function NavigationProvider({
   children,
 }: {
   children: React.ReactNode
-}) {
+}): ReactElement {
   return (
     <NavigationContainer
       linking={useMemo(
         () => ({
           prefixes: [Linking.createURL('/')],
           config: {
-            initialRouteName: 'home',
+            initialRouteName: 'dictionary',
             screens: {
-              home: '',
-              'user-detail': 'user/:id',
+              dictionary: 'dictionary',
+              vocabulary: 'vocabulary',
+              word: 'word/:id',
             },
           },
         }),
-        []
+        [],
       )}
     >
       {children}
