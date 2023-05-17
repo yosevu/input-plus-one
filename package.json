@@ -1,5 +1,5 @@
 {
-  "name": "solito-with-tailwind",
+  "name": "input-plus-one",
   "private": true,
   "workspaces": [
     "apps/*",
