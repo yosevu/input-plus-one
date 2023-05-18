@@ -2,17 +2,35 @@
 
 > "The central hypothesis of the theory is that language acquisition occurs in only one way: by understanding messages." - Stephen Krashen
 
-Input Plus One is a set of tools for learning the Swahili language through understanding the language in its natural spoken and written form.
+Input Plus One is a set of tools for learning Swahili through understanding the language in its natural spoken and written form.
 
-Planned integrations include
+<img src="screens/search.png" alt="A screen shot of the Android app searching for the word simba" width="400" height="auto">
+
+## Features
+### Dictionary Screen
+- Search for an English word in the English-Swahili index
+- Search for a Swahili word in the Swahili-English index
+- Click the green button to switch between Englihs-Swahili and Swahili-English indices
+- Click on a word to go to the Word Detail screen
+
+### Vocabulary Screen
+- View word, translation, and derivations
+- Add word to vocabulary
+- Remove word from vocabulary
+
+### Word Detail Screen
+- Click the Vocabulary link in the header to go to the Vocabulary screen
+- View words added to vocabulary from the Word Detail screen
+- Click on a word to go to the Word Detail screen
+
+## Planned integrations
 - NHK Swahili Radio podcasts with Google Cloud Speech-to-text for transcripts
 - Swahili Wikipedia integration via browser extension
 - GPT Chat integration for language assistance
 
-
 ## Technologies
 
-This is the monorepo for a React Native and Next.js apps.
+This is the monorepo for React Native and Next.js apps.
 
 - [Solito](https://solito.dev/)
 - [TUKI Dictionary](https://sw.wikipedia.org/wiki/Taasisi_ya_Taaluma_za_Kiswahili)
@@ -40,21 +58,3 @@ yarn
 ```sh
 yarn native
 ```
-
-## Features
-
-### Dictionary Screen
-- Search for an English word in the English-Swahili index
-- Search for a Swahili word in the Swahili-English index
-- Click the green button to switch between Englihs-Swahili and Swahili-English indices
-- Click on a word to go to the Word Detail screen
-
-### Vocabulary Screen
-- View word, translation, and derivations
-- Add word to vocabulary
-- Remove word from vocabulary
-
-### Word Detail Screen
-- Click the Vocabulary link in the header to go to the Vocabulary screen
-- View words added to vocabulary from the Word Detail screen
-- Click on a word to go to the Word Detail screen
