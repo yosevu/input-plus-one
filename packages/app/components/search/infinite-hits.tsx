@@ -13,6 +13,7 @@ import { TouchableOpacity } from "app/design/button"
 import RenderHTML from "react-native-render-html"
 import { type SearchItem, type SearchIndex } from "app/types"
 import Loading from "../loading"
+import Word from "../word"
 
 interface HitProps {
   hit: SearchItem;
@@ -34,11 +35,9 @@ export function Hit({ hit, searchIndex }: HitProps): ReactElement {
 
   return (
     <TouchableOpacity onPress={handleOnPress}>
-      <RenderHTML
+      <Word
         contentWidth={width}
         source={{ html: hit.h }}
-        baseStyle={{ color: "rgba(255, 255, 255, 0.8)", fontSize: "1.25rem" }}
-        tagsStyles={{ h1: { color: "#ffffff" } }}
       />
     </TouchableOpacity>
   )

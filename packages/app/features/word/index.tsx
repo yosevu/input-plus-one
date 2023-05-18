@@ -1,8 +1,7 @@
 import { type MethodType } from '@algolia/requester-common'
 import { createParam } from 'solito'
-import { Text, TextLink } from 'app/design/typography'
+import { Text } from 'app/design/typography'
 import { type ReactElement, useEffect, useState } from 'react'
-import RenderHtml from 'react-native-render-html'
 import { useWindowDimensions } from 'react-native'
 import { useVocabulary } from '../vocabulary/provider'
 import { useSearch } from 'app/components/search/provider'
@@ -12,6 +11,9 @@ import { View } from 'app/design/view'
 import { Icon } from 'app/design/icons'
 import Loading from 'app/components/loading'
 import { type SearchItem, type SearchIndex } from 'app/types'
+import Menu from 'app/components/menu'
+import Word from 'app/components/word'
+import WordVariants from 'app/components/word-variants'
 
 interface Query {
   id: string;
@@ -96,25 +98,13 @@ export default function WordScreen(): ReactElement {
   }
 
   return (
-    <View className="m-6 flex-1">
-      <TextLink
-        href="/vocabulary"
-        className="bg-light-blue my-4 self-center rounded-lg px-4 py-2"
-      >
-        <View className="flex-row items-center">
-          <Icon name="list" size={30} color="#FFFFFF" className="mr-2" />
-          <Text className="text-xl text-white">Vocabulary</Text>
-        </View>
-      </TextLink>
-
-      <RenderHtml contentWidth={width} source={{ html: hit.h }} />
-      <View className="my-6 flex-row flex-wrap">
-        {hit.v.map((value) => (
-          <Text key={value} className="mb-2 mr-2 rounded border px-2 py-1">
-            {value}
-          </Text>
-        ))}
-      </View>
+    <View className="bg-dark-blue p-6 flex-1">
+      <Menu />
+      <Word
+        contentWidth={width}
+        source={{ html: hit.h }}
+      />
+      <WordVariants hit={hit} /> 
       {isVocabulary ? (
         <TouchableOpacity
           onPress={handleRemoveWordPress}
