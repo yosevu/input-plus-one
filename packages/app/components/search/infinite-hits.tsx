@@ -11,36 +11,8 @@ import { forwardRef, type ReactElement, type Ref } from "react"
 import { useRouter } from "solito/router"
 import { TouchableOpacity } from "app/design/button"
 import RenderHTML from "react-native-render-html"
-import { type SearchIndex } from "app/types"
+import { type SearchItem, type SearchIndex } from "app/types"
 import Loading from "../loading"
-
-interface SearchItem {
-  h: string;
-  w: string;
-  v: string[];
-  objectID: string;
-  _highlightResult: {
-    h: {
-      value: string;
-      matchLevel: string;
-      fullyHighlighted: boolean;
-      matchedWords: string[];
-    };
-    w: {
-      value: string;
-      matchLevel: string;
-      fullyHighlighted: boolean;
-      matchedWords: string[];
-    };
-    v: Array<{
-      value: string;
-      matchLevel: string;
-      fullyHighlighted: boolean;
-      matchedWords: string[];
-    }>;
-  };
-  __position: number;
-}
 
 interface HitProps {
   hit: SearchItem;
