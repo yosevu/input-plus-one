@@ -3,12 +3,14 @@ import { type SearchItem, type SearchIndex } from 'app/types'
 
 interface VocabularyContextType {
   vocabulary: SearchItem[];
-  addToVocabulary?: (searchIndex: SearchIndex, word: SearchItem) => void;
-  removeFromVocabulary?: (id: string) => void;
+  addToVocabulary: (searchIndex?: SearchIndex, word?: SearchItem) => void;
+  removeFromVocabulary: (id: string) => void;
 }
 
 export const VocabularyContext = createContext<VocabularyContextType>({
   vocabulary: [],
+  addToVocabulary: () => { return undefined },
+  removeFromVocabulary: () => { return undefined },
 })
 
 interface VocabularyProviderProps {
