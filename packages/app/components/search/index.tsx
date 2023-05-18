@@ -2,11 +2,8 @@ import { SafeAreaView, StyleSheet, type FlatList } from "react-native"
 import { View } from "app/design/view"
 import { InstantSearch } from "react-instantsearch-hooks"
 import SearchBox from "./search-box"
-import {
-  type ReactElement,
-  useRef,
-} from "react"
-import InfiniteHits, { Hit } from './infinite-hits'
+import { type ReactElement, useRef } from "react"
+import InfiniteHits, { Hit } from "./infinite-hits"
 import { useSearch } from "./provider"
 
 export default function Search(): ReactElement {

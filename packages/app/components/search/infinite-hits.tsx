@@ -12,6 +12,7 @@ import { useRouter } from "solito/router"
 import { TouchableOpacity } from "app/design/button"
 import RenderHTML from "react-native-render-html"
 import { type SearchIndex } from "app/types"
+import Loading from "../loading"
 
 interface SearchItem {
   h: string;
@@ -83,6 +84,10 @@ const InfiniteHits: React.FC<InfiniteHitsProps> = forwardRef(
   ) => {
     const { hitComponent: Hit, searchIndex } = props
     const { hits, isLastPage, showMore } = useInfiniteHits(props)
+
+    if (hits.length === 0) {
+      return <Loading />
+    }
 
     return (
       <FlatList
