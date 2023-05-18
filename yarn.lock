@@ -4209,6 +4209,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"babel-plugin-inline-dotenv@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "babel-plugin-inline-dotenv@npm:1.7.0"
+  dependencies:
+    dotenv: ^16.0.0
+  peerDependencies:
+    dotenv-expand: ">= 5.0.0"
+  peerDependenciesMeta:
+    dotenv-expand:
+      optional: true
+  checksum: 1203b100b84d247a0db5d1f2565f452e1afa3f747e5ad872ddbf3533b49ec2173ba2c99d22c05fa902914da8de331fbc714132c2eda7b0a2a26fa909dbb10a67
+  languageName: node
+  linkType: hard
+
 "babel-plugin-module-resolver@npm:^4.1.0":
   version: 4.1.0
   resolution: "babel-plugin-module-resolver@npm:4.1.0"
@@ -5709,6 +5723,13 @@ __metadata:
     domelementtype: ^2.2.0
     domhandler: ^4.2.0
   checksum: abf7434315283e9aadc2a24bac0e00eab07ae4313b40cc239f89d84d7315ebdfd2fb1b5bf750a96bc1b4403d7237c7b2ebf60459be394d625ead4ca89b934391
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^16.0.0":
+  version: 16.0.3
+  resolution: "dotenv@npm:16.0.3"
+  checksum: afcf03f373d7a6d62c7e9afea6328e62851d627a4e73f2e12d0a8deae1cd375892004f3021883f8aec85932cd2834b091f568ced92b4774625b321db83b827f8
   languageName: node
   linkType: hard
 
@@ -7871,6 +7892,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.59.6
     "@typescript-eslint/parser": ^5.59.6
     algoliasearch: ^4.17.0
+    babel-plugin-inline-dotenv: ^1.7.0
     commitizen: ^4.3.0
     cz-conventional-changelog: ^3.3.0
     eslint: ^8.40.0
