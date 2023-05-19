@@ -31,7 +31,7 @@ const SearchContext = createContext<SearchContextType>({
 interface SearchContextType {
   searchClient: SearchClient;
   searchIndex: SearchIndex;
-  switchSearchIndex?: () => void;
+  switchSearchIndex: () => void;
 }
 
 export const useSearch = (): SearchContextType => {
