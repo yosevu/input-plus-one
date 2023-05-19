@@ -1,5 +1,5 @@
 import { TouchableOpacity } from "app/design/button"
-import { Icon } from "app/design/icons"
+import { Icon } from "app/design/icon"
 import { Text } from "app/design/typography"
 import { SearchIndex } from "app/types"
 import { type ReactElement } from "react"
