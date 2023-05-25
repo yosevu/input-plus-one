@@ -43,6 +43,10 @@
     }
   },
   "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.1",
     "@types/react-instantsearch": "^6.10.1",
     "algoliasearch": "^4.17.0",
     "react-instantsearch-hooks": "^6.44.0",

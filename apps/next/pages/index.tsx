@@ -1,3 +1,3 @@
-import { HomeScreen } from 'app/features/home/screen'
+import DictionaryScreen from 'app/features/dictionary'
 
-export default HomeScreen
+export default DictionaryScreen

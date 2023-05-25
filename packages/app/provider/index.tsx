@@ -1,11 +1,21 @@
-import { type ReactElement } from 'react'
-import { NavigationProvider } from './navigation'
-import { SafeArea } from './safe-area'
+import { type ReactElement } from "react"
+import { NavigationProvider } from "./navigation"
+import { SafeArea } from "./safe-area"
+import { SearchProvider } from "app/components/search/provider"
+import { VocabularyProvider } from "app/features/vocabulary/provider"
 
-export function Provider({ children }: { children: React.ReactNode }): ReactElement {
+export function Provider({
+  children,
+}: {
+  children: React.ReactNode;
+}): ReactElement {
   return (
     <SafeArea>
-      <NavigationProvider>{children}</NavigationProvider>
+      <SearchProvider>
+        <VocabularyProvider>
+          <NavigationProvider>{children}</NavigationProvider>
+        </VocabularyProvider>
+      </SearchProvider>
     </SafeArea>
   )
 }

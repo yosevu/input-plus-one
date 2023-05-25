@@ -9,8 +9,8 @@ import { SearchIndex } from "app/types"
 import algoliasearch, { type SearchClient } from "algoliasearch"
 
 const getSearchClient = (): SearchClient => {
-  const algoliaAppId = process.env.ALGOLIA_APP_ID
-  const algoliaApiKey = process.env.ALGOLIA_API_KEY
+  const algoliaAppId = process.env.ALGOLIA_APP_ID ?? process.env.NEXT_PUBLIC_ALGOLIA_APP_ID ?? ''
+  const algoliaApiKey = process.env.ALGOLIA_API_KEY ?? process.env.NEXT_PUBLIC_ALGOLIA_API_KEY ?? ''
 
   if (algoliaAppId == null || algoliaApiKey == null) {
     throw new Error("Algolia environment variables not set.")
@@ -21,21 +21,22 @@ const getSearchClient = (): SearchClient => {
   return searchClient
 }
 
-const searchClient = getSearchClient()
-
-const SearchContext = createContext<SearchContextType>({
-  searchClient,
-  searchIndex: SearchIndex.SwaEng,
-})
-
 interface SearchContextType {
   searchClient: SearchClient;
   searchIndex: SearchIndex;
   switchSearchIndex: () => void;
 }
 
+const SearchContext = createContext<SearchContextType | null>(null)
+
 export const useSearch = (): SearchContextType => {
-  return useContext(SearchContext)
+  const contextValue = useContext(SearchContext)
+
+  if (contextValue === null) {
+    throw new Error("useSearch must be used within a SearchProvider")
+  }
+
+  return contextValue
 }
 
 interface SearchProviderProps {
@@ -45,10 +46,10 @@ interface SearchProviderProps {
 export const SearchProvider = ({
   children,
 }: SearchProviderProps): ReactElement => {
+  const searchClient = getSearchClient()
   const [searchIndex, setSearchIndex] = useState<SearchIndex>(
     SearchIndex.EngSwa,
   )
-
   const switchSearchIndex = (): void => {
     setSearchIndex((searchIndex) =>
       searchIndex === SearchIndex.EngSwa

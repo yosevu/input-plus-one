@@ -11,8 +11,8 @@ export default function DictionaryScreen(): ReactElement {
   return (
     <View className="bg-dark-blue flex-1 p-3">
       <Menu />
-      <Toggle searchIndex={searchIndex} onToggle={switchSearchIndex} />
-      <Search />
+      {/* <Toggle searchIndex={searchIndex} onToggle={switchSearchIndex} /> */}
+      {/* <Search /> */}
     </View>
   )
 }

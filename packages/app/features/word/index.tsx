@@ -8,7 +8,7 @@ import { useSearch } from 'app/components/search/provider'
 import { type SearchClient } from 'algoliasearch/lite'
 import { TouchableOpacity } from 'app/design/button'
 import { View } from 'app/design/view'
-import { Icon } from 'app/design/icons'
+import { DeleteIcon } from 'app/design/icon'
 import Loading from 'app/components/loading'
 import { type SearchItem, type SearchIndex } from 'app/types'
 import Menu from 'app/components/menu'
@@ -110,7 +110,7 @@ export default function WordScreen(): ReactElement {
           onPress={handleRemoveWordPress}
           className="bg-green-accent mb-4 flex-row justify-center self-center rounded-lg px-2 py-2"
         >
-          <Icon name="delete" size={24} color="#FFFFFF" className="mr-1" />
+          <DeleteIcon />
           <Text className="mr-2 text-lg font-bold text-white">Remove word</Text>
         </TouchableOpacity>
       ) : (
@@ -118,7 +118,6 @@ export default function WordScreen(): ReactElement {
           onPress={handleAddWordPress}
           className="bg-green-accent mb-4 flex-row justify-center self-center rounded-lg px-2 py-2"
         >
-          <Icon name="delete" size={24} color="#FFFFFF" className="mr-1" />
           <Text className="mr-2 text-lg font-bold text-white">Add word</Text>
         </TouchableOpacity>
       )}
