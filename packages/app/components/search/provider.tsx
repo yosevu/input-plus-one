@@ -9,8 +9,8 @@ import { SearchIndex } from "app/types"
 import algoliasearch, { type SearchClient } from "algoliasearch"
 
 const getSearchClient = (): SearchClient => {
-  const algoliaAppId = process.env.ALGOLIA_APP_ID
-  const algoliaApiKey = process.env.ALGOLIA_API_KEY
+  const algoliaAppId = process.env.ALGOLIA_APP_ID ?? process.env.NEXT_PUBLIC_ALGOLIA_APP_ID ?? ''
+  const algoliaApiKey = process.env.ALGOLIA_API_KEY ?? process.env.NEXT_PUBLIC_ALGOLIA_API_KEY ?? ''
 
   if (algoliaAppId == null || algoliaApiKey == null) {
     throw new Error("Algolia environment variables not set.")
