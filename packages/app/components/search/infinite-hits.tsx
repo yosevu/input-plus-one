@@ -10,7 +10,6 @@ import {
 import { forwardRef, type ReactElement, type Ref } from "react"
 import { useRouter } from "solito/router"
 import { TouchableOpacity } from "app/design/button"
-import RenderHTML from "react-native-render-html"
 import { type SearchItem, type SearchIndex } from "app/types"
 import Loading from "../loading"
 import Word from "../word"
