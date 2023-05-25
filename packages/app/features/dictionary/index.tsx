@@ -6,7 +6,7 @@ import { useSearch } from "app/components/search/provider"
 import Toggle from "app/components/toggle"
 
 export default function DictionaryScreen(): ReactElement {
-  // const { searchIndex, switchSearchIndex } = useSearch()
+  const { searchIndex, switchSearchIndex } = useSearch()
   
   return (
     <View className="bg-dark-blue flex-1 p-3">
